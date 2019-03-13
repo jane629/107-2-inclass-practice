@@ -9,3 +9,42 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+a <- 2
+3 -> b
+```
+
+```{r}
+65 + b 
+```
+
+```{r}
+c <- 47
+
+65 + c
+```
+
+```{r}
+`c` 
+
+```
+
+```{r}
+
+`107上學期平均` <- 82
+
+```
+
+```{r}
+a2 <- 5L
+
+```
+
+```{r}
+aVector<-c(5,6,7)
+a2Vector<-c(5L,6L,7L)
+```
+
+```{r}
+class(a2Vector)
+```
