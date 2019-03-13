@@ -41,10 +41,15 @@ a2 <- 5L
 ```
 
 ```{r}
-aVector<-c(5,6,7)
-a2Vector<-c(5L,6L,7L)
+
+aVector <- c(5,6,7)
+
+a2Vector <- c(5L,6L,7L)
+
 ```
 
 ```{r}
-class(a2Vector)
-```
+
+class (a2Vector) 
+
+``` 
