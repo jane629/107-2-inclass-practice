@@ -72,7 +72,37 @@ class(studentMajors0)
 
 ```
 
+```{r}
+
+typeof(studentMajors)
+```
+
+```{r}
+
+typeof(studentMajors0)
+
+```
+
+```{r}
+
+levels(studentMajors)
+
+```
+
+```{r}
+
+birthplace <- factor( c("台北市", "台中市", "台南市", "台北市", "台中市"))
+
+class(birthplace)
+levels(birthplace)
+typeof(birthplace)
+as.integer(birthplace)
+
+```
 
 
+```{r}
+
+```
 
 
