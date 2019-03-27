@@ -20,14 +20,9 @@ Sys.timezone()
 ```
 
 ```{r}
-dtObject
+TWDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
 
-```
-
-```{r}
-twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
-
-LisbonDateTime <- with_tz(twDateTime,tzone="Europe/Lisbon")
+LisbonDateTime <- with_tz(TWDateTime,tzone="Europe/Lisbon")
 ```
 
 ```{r}
@@ -36,4 +31,103 @@ twDateTime <- ymd_hms("2019-04-01 06:29:00", tz="Asia/Taipei")
 JPDateTime <- with_tz(twDateTime,tzone = "Asia/Tokyo")
 ```
 
+```{r}
+typeof(TWDateTime)
+as.double(TWDateTime)
+as.double(LisbonDateTime)
+```
 
+```{r}
+ymd("2018-09-11")
+mdy("mar 3, 2019")
+
+todya <- ymd("2019/03/27")
+
+as.integer(ymd("2019-02-28"))
+
+```
+
+```{r}
+a <- c(1, 5, -3)
+b <- c(0.5, 12, 2)
+aL <- c(1L, 5L, -3L)
+bL <- c(-2L, -4L, 8L)
+
+a+bL
+aL+bL
+aL-bL
+a*bL
+a/bL
+class(a*bL)
+class(a+bL)
+```
+
+```{r}
+a
+a+5
+a*8
+a^2
+```
+
+```{r}
+DateTime <- ymd_hms("2019-03-18 14:04:00")
+DateTime+1
+ymd("2019-08-11")-ymd("2000-02-01")
+as.integer(ymd("2019-08-11")-ymd("2000-02-01"))
+DateTime1 <- ymd("2019.08.11")
+DateTime2 <- ymd("2000.02.01")
+DateTime2 - DateTime1
+```
+```{r}
+startingDate <- ymd("2019-03-27")
+startingDate + years(1)
+startingDate + dyears(1)
+startingDate + years(1) - days(1)
+```
+
+```{r}
+x <- 5
+y <- 7
+x2 <- c(1,5,10)
+y2 <- c(-1,5,20)
+x3 <- c("小明","小花")
+y3 <- c("小明","小華")
+
+x == y
+x <= y
+x != y
+x < y
+
+x2 == y2
+x2 >= y2
+x2 != y2
+x2 <= y2
+
+x3 == y3
+x3 != y3
+```
+
+```{r}
+x4 <- c(1,5,8)
+y4 <- c(5,8)
+
+x4 %in% y4
+
+x5 <- c("台北市","新北市","高雄市")
+y5 <- c("台北市","新北市")
+
+x5 %in% y5
+```
+
+```{r}
+x6 <- c(1,NA,10)
+y6 <- c(-1,NA,20)
+
+x7 <- c(NA,"小花")
+y7 <- c(NA,"小華")
+
+is.na(x6)
+sum(x6)
+sum(x6, na.rm = F)
+sum(x6, na.rm = TRUE)
+```
