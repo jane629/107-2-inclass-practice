@@ -1,0 +1,39 @@
+---
+title: '2019-03-27'
+author: "林茂廷"
+date: "3/27/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(lubridate)
+dtObject<-ymd_hms("1970-01-01 00:02:53") 
+```
+
+```{r}
+Sys.timezone()
+
+```
+
+```{r}
+dtObject
+
+```
+
+```{r}
+twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
+
+LisbonDateTime <- with_tz(twDateTime,tzone="Europe/Lisbon")
+```
+
+```{r}
+twDateTime <- ymd_hms("2019-04-01 06:29:00", tz="Asia/Taipei")
+
+JPDateTime <- with_tz(twDateTime,tzone = "Asia/Tokyo")
+```
+
+
