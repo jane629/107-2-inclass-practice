@@ -9,3 +9,93 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+x3 <- c("小明","小花")
+y3 <- c("小明","小華")
+
+```
+
+```{r}
+x3 == y3
+x3 != y3
+
+```
+
+! negation 反向操作
+```{r}
+x3==y3
+!(x3 == y3)
+```
+
+```{r}
+library(readr)
+exData2 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData2.csv")
+currency <- exData2$幣別
+```
+
+head 會顯示物件前六個元素值
+```{r}
+head(currency)  
+```
+
+```{r}
+levels(currency)
+```
+
+
+資料一進來並沒有被當成factor class
+更正為factor class
+```{r}
+class(currency)
+
+```
+
+```{r}
+currency <- as.factor(currency)
+class(currency)
+
+```
+
+```{r}
+levels(currency)
+```
+
+length(): 數向量內的元素個數(向量長度)
+```{r}
+length(levels(currency))
+
+```
+
+```{r}
+step1_extractLevelsVector <- levels(currency)
+step1_extractLevelsVector
+
+step2_countVectorLength <- length(step1_extractLevelsVector)
+step2_countVectorLength
+```
+
+多少筆日圓資料
+```{r}
+head(currency)
+levels(currency)
+
+```
+
+```{r}
+currency2 <- c("日圓","美元","日圓")
+currency2
+```
+
+```{r}
+sum(currency2 == "日圓")
+```
+
+```{r}
+
+head(currency)
+sum(currency == "日圓JPY/USD")
+
+```
+
+
+
