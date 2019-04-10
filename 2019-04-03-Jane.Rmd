@@ -239,13 +239,67 @@ sum(satisfyBOth)
 ```
 
 
+```{r}
+library(readr)
+transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
+courseType <- transcriptDataFinal$`必選修類別（必∕選∕通）`
+major <- transcriptDataFinal$學系
+studentID <- transcriptDataFinal$學號
+grade <- transcriptDataFinal$學期成績
+```
 
+有多少筆資料是來自經濟學系。
+```{r}
+head(major == "經濟學系")
+sum(major == "經濟學系")
+```
 
+請問學號“5bdS6977b”同學修了多少課。
+```{r}
+head(studentID =="5bdS6977b")
+sum(studentID =="5bdS6977b")
+```
 
+請問學號“5bdS6977b”有多少科成績及格。
+```{r}
+isStudentID <- studentID == "5bdS6977b"
+Pass <- grade >= 60
+sum(isStudentID & Pass)
+```
 
+有多少筆資料來自經濟學系學生且為選修課。
+```{r}
+isMajor <- major == "經濟學系"
+isCourseType <- courseType == "選"
 
+sum(isMajor & isCourseType)
+```
 
+在經濟學系學生且必修課程中，成經不及格佔多少比例。
+```{r}
 
+sum((major == "經濟學系") & (courseType == "必") & (grade < 60))
+sum((major == "經濟學系") & (courseType == "必"))
+
+sum((major == "經濟學系") & (courseType == "必") & (grade < 60))/sum((major == "經濟學系") & (courseType == "必"))
+```
+
+老師解答
+1.經濟系學生且為必修課有多少筆
+```{r}
+sum((major == "經濟學系") & (courseType == "必")) -> 分母
+分母
+```
+
+2.其中成績不及格占多少比例
+```{r}
+sum((major == "經濟學系") & (courseType == "必") & (grade < 60)) -> 分子
+分子
+```
+
+```{r}
+分子/分母
+```
 
 
 
