@@ -97,5 +97,65 @@ sum(currency == "日圓JPY/USD")
 
 ```
 
+#5.4
 
+```{r}
+x5 <- c("台北市","新北市","高雄市")
+greatTaipei <- c("台北市","新北市")
 
+x5 %in% greatTaipei
+```
+
+```{r}
+!(x5 %in% greatTaipei)
+```
+
+```{r}
+y5 <- c("女","男","女")
+y5
+
+y5 == "女"
+!(y5 == "女")
+
+```
+
+> 圈圏是要圏出"Relational Operation"為真的元素在物件內的「位置」
+
+& : 同時滿足兩個條件
+```{r}
+x5
+y5
+x5 %in% greatTaipei
+y5 == "女"
+(x5 %in% greatTaipei) & (y5=="女")
+```
+
+```{r}
+y5
+y5 == "女"
+which(y5=="女")
+
+which((x5 %in% greatTaipei) & (y5 == "女"))
+```
+
+ | :滿足其中一個條件
+```{r}
+x5
+y5
+x5 %in% greatTaipei
+y5 == "女"
+(x5 %in% greatTaipei) | (y5=="女")
+
+which((x5 %in% greatTaipei) | (y5=="女"))
+```
+
+xor:只滿足其中一個條件(either or)
+```{r}
+x5 %in% greatTaipei
+y5 == "女"
+xor(x5 %in% greatTaipei, y5=="女")
+```
+
+```{r}
+
+```
