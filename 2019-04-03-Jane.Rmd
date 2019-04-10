@@ -157,5 +157,106 @@ xor(x5 %in% greatTaipei, y5=="女")
 ```
 
 ```{r}
+which(xor(x5 %in% greatTaipei, y5=="女"))
+```
+
+
+# 綜合練習
+
+```{r}
+library(readr)
+exData2 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData2.csv")
+date <- as.character(exData2$期間)
+currency <- exData2$幣別
+exchangeRate <- exData2$匯率
+```
+
+請把date的class存成date class。
+```{r}
+head(date)
+```
+
+```{r}
+library(lubridate)
+date <- ymd(date)
+```
+
+```{r}
+class(date)
+```
+
+1980-08-01之後的資料有多少筆。
+```{r}
+isafter19800801 <-
+  date >= ymd("1980-08-01")
 
 ```
+
+```{r}
+head(as.integer(date))
+as.integer(ymd("1980-08-01"))
+head(date >= ymd("1980-08-01"))
+```
+
+```{r}
+class(isafter19800801)
+sum(isafter19800801)
+```
+
+幣別為“歐元USD/EUR”的資料有多少筆。
+```{r}
+head(currency == "歐元USD/EUR")
+
+isEURO <- currency == "歐元USD/EUR"
+
+sum(isEURO)
+```
+
+```{r}
+currency <- as.factor(currency)
+class(currency)
+
+isEURO <- currency == "歐元USD/EUR"
+sum(isEURO)
+```
+
+exchangeRate有多少筆NA。
+```{r}
+isExchangeRateNA <- is.na(exchangeRate)
+sum(isExchangeRateNA)
+```
+
+排除NA後，幣別為“歐元USD/EUR”的資料有多少筆。
+```{r}
+isNotNA <- !(is.na(exchangeRate))
+isEURO <- currency ==  "歐元USD/EUR"
+```
+
+```{r}
+satisfyBOth <- isNotNA & isEURO
+sum(isNotNA & isEURO)
+sum(satisfyBOth)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
