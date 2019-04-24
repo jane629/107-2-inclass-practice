@@ -106,23 +106,55 @@ stuDF4 <- as.data.frame(StuList,stringsAsFactors = F)
 stuDF4
 ```
 
+tolower 轉小寫
+toupper 轉大寫
+```{r}
+chosenLETTERS <- LETTERS[1:15]
+chosenLETTERS
+matObj1 <- matrix(chosenLETTERS,5,3)
+matObj1
+tolower(matObj1)
+toupper(matObj1) 
+```
 
+```{r}
+chosenletters <- letters[1:16]
+matobj2 <- matrix(chosenletters,4,4)
+matobj2
+```
 
+```{r}
+matObj1
 
+matObj1[[8]]
+matObj1[3,2]
+matObj1[c(1,4),c(2,3)]
+matObj1[c(T,F,F,T,F),c(F,T,T)]
+matObj1[c(T,F,F,T,F),c(2,3)]
+```
 
+```{R}
+library(readr)
+classSurvey <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/classSurvey.csv")
+```
 
+```{r}
+class(classSurvey)
+```
 
+```{r}
+classSurvey[c(4,5)]
+classSurvey[c("性別","本學期學分數")]
+classSurvey[,4:5]
+classSurvey[,c(4,5)]
+classSurvey[,c(F,F,F,T,T,F)]
+classSurvey[c(1:60),c(4,5)]
 
+``` 
 
-
-
-
-
-
-
-
-
-
+```{r}
+classSurvey[logical_index,]
+```
 
 
 
