@@ -102,8 +102,11 @@ stuDF3
 ```
 
 ```{r}
-
+stuDF4 <- as.data.frame(StuList,stringsAsFactors = F)
+stuDF4
 ```
+
+
 
 
 
