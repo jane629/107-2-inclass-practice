@@ -1,0 +1,138 @@
+---
+title: "2019-04-24-Jane"
+author: "Jane"
+date: "2019年4月24日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+vec1 <- c(1:6)
+vec1
+```
+
+```{r}
+mat1 <- matrix(c(1:6),2,3)
+mat1
+```
+
+```{r}
+class(mat1)
+typeof(mat1)
+```
+
+```{r}
+mat1
+mat1[[2]]
+mat1[[6]]
+```
+
+```{r}
+mat2 <- matrix(c("a","b","c","d"),2,2)
+mat2
+class(mat2)
+typeof(mat2)
+
+mat2[[2]]
+mat2[c(T,F,F,T)]
+
+```
+
+```{r}
+StuList <- list(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50)
+  )
+StuList 
+```
+
+```{r}
+StuDF <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50)
+  )
+StuDF 
+```
+
+```{r}
+class(StuDF)
+typeof(StuDF)
+
+class(StuList)
+typeof(StuList)
+```
+
+```{r}
+StuDF
+
+StuDF[[2]][[3]]
+```
+
+```{r}
+class(StuDF$姓名)
+```
+
+```{r}
+StuDF$姓名 <- as.character(StuDF$姓名)
+class(StuDF$姓名)
+```
+
+```{r}
+StuDF2 <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50),
+  stringsAsFactors = FALSE
+  )
+StuDF2 
+```
+
+```{r}
+class(StuDF2$姓名)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
