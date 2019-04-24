@@ -96,12 +96,14 @@ StuDF2
 class(StuDF2$姓名)
 ```
 
+```{r}
+as.data.frame(StuList) -> stuDF3
+stuDF3
+```
 
+```{r}
 
-
-
-
-
+```
 
 
 
