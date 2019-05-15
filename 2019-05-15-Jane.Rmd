@@ -170,6 +170,7 @@ demand_fun <- function(c,d,P){
 
 supply_fun(0,1,1)
 demand_fun(5,1,1)
+demand_fun(5,1,1)-supply_fun(0,1,1)
 ```
 
 
