@@ -130,16 +130,47 @@ logiAsiaCrisis <- exData3$isAsiaCrisis
 exData3[logiAsiaCrisis, ]
 
 exData3[exData3$isAsiaCrisis==T ,]
+exData3[exData3$isAsiaCrisis ,]
 ```
 
+```{r}
+library(readr)
+transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
+```
 
+```{r}
+transcriptDataFinal[transcriptDataFinal$學號 == "92aS67fee", ]
+```
 
+```{r}
+utility_cobb_douglass <- function(x,y,.alpha,.beta){
+  utilValue <- x^.alpha*y^.beta # 程序產生output值
+  return(utilValue) # 傳回output值
+}
+```
 
+```{r}
+f <- function(x,y){
+  sum <- x+y
+  return(sum) 
+}
 
+f(1,2)
+```
 
+```{r}
+supply_fun <- function(a,b,P){
+  Qs <- a+b*P
+  return(Qs)}
 
+demand_fun <- function(c,d,P){
+  Qd <- c-d*P
+  return(Qd)
+}
 
-
+supply_fun(0,1,1)
+demand_fun(5,1,1)
+```
 
 
 
